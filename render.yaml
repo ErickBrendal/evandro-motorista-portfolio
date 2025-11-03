@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: evandro-motorista-portfolio
+    env: node
+    plan: free
+    buildCommand: npm run build
+    startCommand: node server-static.js
+    envVars:
+      - key: NODE_ENV
+        value: production
