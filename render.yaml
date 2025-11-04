@@ -5,6 +5,7 @@ services:
     plan: free
     buildCommand: npm run build
     startCommand: node server-static.js
+    healthCheckPath: /
     envVars:
       - key: NODE_ENV
         value: production

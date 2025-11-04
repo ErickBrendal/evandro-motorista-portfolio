@@ -123,7 +123,15 @@ export default function Footer() {
               &copy; {currentYear} Evandro Jorge - Motorista Particular Premium. Todos os direitos reservados.
             </motion.p>
             <motion.p className="text-foreground/60 text-sm" variants={itemVariants}>
-              Desenvolvido com <span className="text-accent">❤️</span> por Manus
+              Desenvolvido com <span className="text-accent">❤️</span> por{" "}
+              <a
+                href="https://erick-almeida-portfolio.vercel.app/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors font-semibold"
+              >
+                @erickalmeida
+              </a>
             </motion.p>
           </motion.div>
         </div>

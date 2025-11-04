@@ -21,7 +21,7 @@ export default function Hero() {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.8 }
+      transition: { duration: 0.8 },
     },
   };
 
@@ -86,40 +86,64 @@ export default function Hero() {
           </motion.div>
         </motion.div>
 
-        {/* Foto do Evandro */}
+        {/* Foto redonda flutuante */}
         <motion.div
-          className="flex-1 flex justify-center items-center"
+          className="flex-1 flex justify-center items-center relative"
           variants={itemVariants}
         >
-          <div className="relative w-full max-w-sm">
-            {/* Glow de fundo */}
-            <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent rounded-2xl blur-2xl"></div>
-
-            {/* Container da imagem */}
+          <div className="relative w-full max-w-md flex justify-center">
+            {/* Círculo de glow maior */}
             <motion.div
-              className="relative rounded-2xl overflow-hidden border-2 border-accent/30 shadow-2xl"
-              whileHover={{ scale: 1.02 }}
+              className="absolute inset-0 bg-gradient-to-br from-accent/30 via-accent/10 to-transparent rounded-full blur-3xl"
+              animate={{ scale: [1, 1.1, 1] }}
+              transition={{ duration: 4, repeat: Infinity }}
+            ></motion.div>
+
+            {/* Círculo decorativo externo */}
+            <motion.div
+              className="absolute inset-0 rounded-full border-2 border-accent/30"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+            ></motion.div>
+
+            {/* Container da imagem redonda */}
+            <motion.div
+              className="relative w-80 h-80 rounded-full overflow-hidden border-4 border-accent/50 shadow-2xl"
+              whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
               <img
                 src="/evandro-profile.png"
                 alt="Evandro Jorge - Motorista Particular Premium"
-                className="w-full h-auto object-cover"
+                className="w-full h-full object-cover"
               />
 
               {/* Overlay com gradiente */}
-              <div className="absolute inset-0 bg-gradient-to-t from-background/40 via-transparent to-transparent"></div>
+              <div className="absolute inset-0 bg-gradient-to-t from-background/20 via-transparent to-transparent"></div>
             </motion.div>
 
-            {/* Badge premium */}
+            {/* Badge premium flutuante */}
             <motion.div
-              className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold shadow-lg text-sm md:text-base"
+              className="absolute -bottom-4 -right-4 bg-accent text-accent-foreground px-6 py-3 rounded-full font-semibold shadow-lg text-sm md:text-base border-4 border-background"
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               transition={{ delay: 0.8, type: "spring" }}
+              whileHover={{ scale: 1.1 }}
             >
-              ⭐ Uber Black Premium
+              ⭐ Uber Black
             </motion.div>
+
+            {/* Partículas decorativas */}
+            <motion.div
+              className="absolute top-10 right-10 w-3 h-3 bg-accent rounded-full"
+              animate={{ y: [0, -20, 0], opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 3, repeat: Infinity }}
+            ></motion.div>
+            <motion.div
+              className="absolute bottom-20 left-10 w-2 h-2 bg-accent/60 rounded-full"
+              animate={{ y: [0, 20, 0], opacity: [0.5, 1, 0.5] }}
+              transition={{ duration: 4, repeat: Infinity, delay: 0.5 }}
+            ></motion.div>
           </div>
         </motion.div>
       </motion.div>
