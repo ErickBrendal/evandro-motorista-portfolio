@@ -115,7 +115,7 @@ export default function Hero() {
               <img
                 src="/evandro-profile.png"
                 alt="Evandro Jorge - Motorista Particular Premium"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover object-center"
               />
 
               {/* Overlay com gradiente */}

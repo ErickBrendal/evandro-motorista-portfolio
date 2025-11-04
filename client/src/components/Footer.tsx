@@ -82,14 +82,14 @@ export default function Footer() {
               </li>
               <li className="flex items-center gap-2">
                 <Instagram className="w-4 h-4 text-accent" />
-                <a
-                  href="https://instagram.com/motorista_evandrojorge"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-foreground/60 hover:text-accent transition-colors"
-                >
-                  @motorista_evandrojorge
-                </a>
+              <a
+                href="https://www.instagram.com/motorista_evandro/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-accent hover:text-accent/80 transition-colors"
+              >
+                <Instagram className="w-5 h-5" />
+              </a>
               </li>
               <li className="flex items-center gap-2">
                 <MapPin className="w-4 h-4 text-accent" />
