@@ -43,7 +43,7 @@ export const generateSchemaMarkup = () => {
     url: SEO_CONFIG.url,
     sameAs: [
       "https://wa.me/5511997654713",
-      "https://instagram.com/motorista_evandrojorge",
+      "https://www.instagram.com/motorista_evandro/",
     ],
     priceRange: "$$",
     areaServed: "São Paulo, SP",

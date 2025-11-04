@@ -106,12 +106,12 @@ export default function Contact() {
               <div>
                 <h3 className="font-semibold text-foreground mb-1">Instagram</h3>
                 <a
-                  href="https://instagram.com/motorista_evandrojorge"
+                  href="https://www.instagram.com/motorista_evandro/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-accent hover:text-accent/80 transition-colors"
                 >
-                  @motorista_evandrojorge
+                  @motorista_evandro
                 </a>
               </div>
             </motion.div>
