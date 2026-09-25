@@ -1,0 +1,124 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #070707;
+  --color-coal: #0e0e0e;
+  --color-graphite: #161616;
+  --color-steel: #232323;
+  --color-bone: #f4f1ea;
+  --color-mist: #a8a39a;
+  --color-gold: #c9a24a;
+  --color-gold-light: #e6c979;
+  --color-gold-deep: #8f6f24;
+  --color-whatsapp: #25d366;
+
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-sans: "Manrope", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-shine: shine 6s ease-in-out infinite;
+
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes shine {
+    0%,
+    100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+    -webkit-tap-highlight-color: transparent;
+  }
+  body {
+    @apply bg-ink text-bone font-sans antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  ::selection {
+    @apply bg-gold text-ink;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-4 outline-gold;
+  }
+  input,
+  select,
+  textarea {
+    color-scheme: dark;
+  }
+}
+
+@layer components {
+  .container-x {
+    @apply mx-auto w-full max-w-6xl px-5 sm:px-8;
+  }
+  .text-gold-gradient {
+    background: linear-gradient(
+      100deg,
+      #8f6f24 0%,
+      #e6c979 35%,
+      #c9a24a 55%,
+      #f3dea0 75%,
+      #a8842f 100%
+    );
+    background-size: 200% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @apply animate-shine;
+  }
+  .gold-line {
+    background: linear-gradient(90deg, transparent, #c9a24a, transparent);
+  }
+  .btn-gold {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-gold px-7 py-4 text-sm font-bold tracking-wide text-ink uppercase transition duration-300 hover:bg-gold-light hover:shadow-[0_10px_40px_-10px_rgba(201,162,74,0.7)] active:scale-[0.98];
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-bone/20 px-7 py-4 text-sm font-bold tracking-wide text-bone uppercase transition duration-300 hover:border-gold hover:text-gold active:scale-[0.98];
+  }
+  .card {
+    @apply rounded-2xl border border-white/[0.07] bg-gradient-to-b from-white/[0.04] to-white/[0.01] backdrop-blur-sm;
+  }
+  .field {
+    @apply w-full rounded-xl border border-white/10 bg-ink/60 px-4 py-3.5 text-bone placeholder:text-mist/60 transition focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/25;
+  }
+  .label {
+    @apply mb-2 block text-xs font-semibold tracking-[0.18em] text-mist uppercase;
+  }
+  .eyebrow {
+    @apply inline-flex items-center gap-3 text-xs font-semibold tracking-[0.3em] text-gold uppercase;
+  }
+}
+
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
