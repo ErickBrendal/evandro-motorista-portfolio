@@ -1,5 +1,5 @@
 # Dependencies
-**/node_modules
+node_modules
 .pnpm-store/
 
 # Build outputs
@@ -105,3 +105,6 @@ temp/
 *.db
 *.sqlite
 *.sqlite3
+
+# Vercel
+.vercel
